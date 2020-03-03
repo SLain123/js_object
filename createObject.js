@@ -1,15 +1,6 @@
-let list = {
- value: 1,
- rest: {
-  value: 2, 
-   rest: {
-    value: 3,
-    rest: null
-  }
- }
-};
+// Функция преобразующая массив в список
 
-let arrEx = [1, 2, 3, 4];
+let arrEx = [10, 20, 30];
 
 
 const arrayToList = arr => {
@@ -42,4 +33,5 @@ return result;
 }
 
 console.log(arrayToList(arrEx));
+
 
