@@ -1,6 +1,10 @@
-// Функция которая превращает список (объект) в массив
+//  listToArray Функция которая превращает список (объект) в массив
 
-let list1 = { 
+// nth Функция которая в качестве аргументов принимает список и число, 
+// а возвращает элемент на заданной позиции в списке или же undefined в 
+// случае отсутствия такого элемента.
+
+let listExample = { 
  value: 10, 
  rest: { 
   value: 20, 
@@ -41,4 +45,13 @@ const listToArray = list => {
  return arr;
 };
 
-console.log(listToArray(list1));
+const nth = (list, num) => {
+
+  let result = listToArray(list),
+      end = result[num];
+
+
+  return end;
+}
+
+console.log(nth(listExample, 2));
