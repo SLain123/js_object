@@ -31,6 +31,11 @@ const deepObject = (obj1, obj2) => {
       }
 
       else if(typeof(obj1[i]) == 'object' && typeof(obj2[i]) == 'object') {
+        if (obj1[i] instanceof Date && obj2[i] instanceof Date) {
+          result = deepStringAndNumber(obj1[i].getTime(), obj2[i].getTime());
+          return result;
+        }
+        
         result = deepObject(obj1[i], obj2[i]);
 
         if (result == false) {
@@ -70,7 +75,7 @@ var objA = {
       }
   },
   prop5: 1000,
-  
+  prop6: new Date(2016, 2, 10)
 };
 
 var objB = {
@@ -84,7 +89,8 @@ var objB = {
           subSubProp2: [1, 2, {prop2: 1, prop: 2}, 4, 5]
       },
       subProp1: 'sub value1'
-  }
+  },
+  prop6: new Date('2016/03/10'),
 };
 
 
